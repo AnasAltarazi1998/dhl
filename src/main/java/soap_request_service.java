@@ -114,9 +114,9 @@ public class soap_request_service {
             Node node = nodeList.item(0);
             Element eElement = (Element)node;
             createShipmentOrderModel.setStatusMessage(eElement.getElementsByTagName("statusMessage").item(0).getTextContent());
-            System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
             createShipmentOrderModel.setShipment_number(doc.getElementsByTagName("shipmentNumber").item(0).getTextContent());
-             createShipmentOrderModel.setLabelUrl(eElement.getElementsByTagName("labelUrl").item(0).getTextContent());
+            createShipmentOrderModel.setLabelUrl(eElement.getElementsByTagName("labelUrl").item(0).getTextContent());
+            System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
             return createShipmentOrderModel;
         }
         catch (NullPointerException | ParserConfigurationException | SAXException | IOException e) {

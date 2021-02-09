@@ -1,6 +1,6 @@
 <%@ page import="java.io.File" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+
+         <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,28 +25,29 @@
         <div class="field">
             <label class="label">product</label>
             <div class="control">
-                <input class="input" type="text" name="product" />
+                <input class="input" required type="text" name="product" />
             </div>
         </div>
 
         <div class="field">
             <label class="label">account number</label>
+            <label class="help is-danger">${error_code}</label>
             <div class="control">
-                <input class="input" type="text" name="account_number" />
+                <input class="input" required type="text" name="account_number" value=""/>
             </div>
         </div>
 
         <div class="field">
             <label class="label">customer Reference</label>
             <div class="control">
-                <input class="input" type="text" name="customer_reference" />
+                <input class="input" required type="text" name="customer_reference" />
             </div>
         </div>
 
         <div class="field">
             <label class="label">shipment Date</label>
             <div class="control">
-                <input class="input" type="date" name="shipment_date" />
+                <input class="input" required type="date" name="shipment_date" />
             </div>
         </div>
 
@@ -55,14 +56,14 @@
         <div class="field">
             <label class="label">weight</label>
             <div class="control">
-                <input class="input" type="text" name="product_weight" />
+                <input class="input" required type="text" name="product_weight" />
             </div>
         </div>
 
         <div class="field">
             <label class="label">recipient Email Address</label>
             <div class="control">
-                <input class="input" type="text" name="recipient_email_address" />
+                <input class="input" required type="text" name="recipient_email_address" />
             </div>
         </div>
 
@@ -73,35 +74,35 @@
         <div class="field">
             <label class="label">name</label>
             <div class="control">
-                <input class="input" type="text" name="shiper_name" />
+                <input class="input" required type="text" name="shiper_name" />
             </div>
         </div>
 
         <div class="field">
             <label class="label">street name</label>
             <div class="control">
-                <input class="input" type="text" name="shiper_street_name" />
+                <input class="input" required type="text" name="shiper_street_name" />
             </div>
         </div>
 
         <div class="field">
             <label class="label">street number</label>
             <div class="control">
-                <input class="input" type="text" name="shiper_street_number" />
+                <input class="input" required type="text" name="shiper_street_number" />
             </div>
         </div>
 
         <div class="field">
             <label class="label">zip</label>
             <div class="control">
-                <input class="input" type="text" name="shiper_address_zip" />
+                <input class="input" required type="text" name="shiper_address_zip" />
             </div>
         </div>
 
         <div class="field">
             <label class="label">city</label>
             <div class="control">
-                <input class="input" type="text" name="shiper_address_city" />
+                <input class="input" required type="text" name="shiper_address_city" />
             </div>
         </div>
 
@@ -110,7 +111,7 @@
             <div class="cotrol">
                 <select name="shiper_country_code">
                     <option value="AF">Afghanistan</option>
-                    <option value="AX">Åland Islands</option>
+                    <option value="AX">ï¿½land Islands</option>
                     <option value="AL">Albania</option>
                     <option value="DZ">Algeria</option>
                     <option value="AS">American Samoa</option>
@@ -163,10 +164,10 @@
                     <option value="CD">Congo, the Democratic Republic of the</option>
                     <option value="CK">Cook Islands</option>
                     <option value="CR">Costa Rica</option>
-                    <option value="CI">Côte d'Ivoire</option>
+                    <option value="CI">Cï¿½te d'Ivoire</option>
                     <option value="HR">Croatia</option>
                     <option value="CU">Cuba</option>
-                    <option value="CW">Curaçao</option>
+                    <option value="CW">Curaï¿½ao</option>
                     <option value="CY">Cyprus</option>
                     <option value="CZ">Czech Republic</option>
                     <option value="DK">Denmark</option>
@@ -289,11 +290,11 @@
                     <option value="PT">Portugal</option>
                     <option value="PR">Puerto Rico</option>
                     <option value="QA">Qatar</option>
-                    <option value="RE">Réunion</option>
+                    <option value="RE">Rï¿½union</option>
                     <option value="RO">Romania</option>
                     <option value="RU">Russian Federation</option>
                     <option value="RW">Rwanda</option>
-                    <option value="BL">Saint Barthélemy</option>
+                    <option value="BL">Saint Barthï¿½lemy</option>
                     <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
                     <option value="KN">Saint Kitts and Nevis</option>
                     <option value="LC">Saint Lucia</option>
@@ -371,21 +372,21 @@
         <div class="field">
             <label class="label">name</label>
             <div class="control">
-                <input class="input" type="text" name="receiver_name" />
+                <input class="input" required type="text" name="receiver_name" />
             </div>
         </div>
 
         <div class="field">
             <label class="label">street name</label>
             <div class="control">
-                <input class="input" type="text" name="receiver_street_name" />
+                <input class="input" required type="text" name="receiver_street_name" />
             </div>
         </div>
 
         <div class="field">
             <label class="label">street number</label>
             <div class="control">
-                <input class="input" type="text" name="receiver_street_number" />
+                <input class="input" required type="text" name="receiver_street_number" />
             </div>
         </div>
 
@@ -393,14 +394,14 @@
         <div class="field">
             <label class="label">zip</label>
             <div class="control">
-                <input class="input" type="text" name="receiver_address_zip" />
+                <input class="input" required type="text" name="receiver_address_zip" />
             </div>
         </div>
 
         <div class="field">
             <label class="label">city</label>
             <div class="control">
-                <input class="input" type="text" name="receiver_address_city" />
+                <input class="input" required type="text" name="receiver_address_city" />
             </div>
         </div>
 
@@ -409,7 +410,7 @@
             <div class="cotrol">
                 <select name="receiver_country_code">
                     <option value="AF">Afghanistan</option>
-                    <option value="AX">Åland Islands</option>
+                    <option value="AX">ï¿½land Islands</option>
                     <option value="AL">Albania</option>
                     <option value="DZ">Algeria</option>
                     <option value="AS">American Samoa</option>
@@ -462,10 +463,10 @@
                     <option value="CD">Congo, the Democratic Republic of the</option>
                     <option value="CK">Cook Islands</option>
                     <option value="CR">Costa Rica</option>
-                    <option value="CI">Côte d'Ivoire</option>
+                    <option value="CI">Cï¿½te d'Ivoire</option>
                     <option value="HR">Croatia</option>
                     <option value="CU">Cuba</option>
-                    <option value="CW">Curaçao</option>
+                    <option value="CW">Curaï¿½ao</option>
                     <option value="CY">Cyprus</option>
                     <option value="CZ">Czech Republic</option>
                     <option value="DK">Denmark</option>
@@ -588,11 +589,11 @@
                     <option value="PT">Portugal</option>
                     <option value="PR">Puerto Rico</option>
                     <option value="QA">Qatar</option>
-                    <option value="RE">Réunion</option>
+                    <option value="RE">Rï¿½union</option>
                     <option value="RO">Romania</option>
                     <option value="RU">Russian Federation</option>
                     <option value="RW">Rwanda</option>
-                    <option value="BL">Saint Barthélemy</option>
+                    <option value="BL">Saint Barthï¿½lemy</option>
                     <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
                     <option value="KN">Saint Kitts and Nevis</option>
                     <option value="LC">Saint Lucia</option>

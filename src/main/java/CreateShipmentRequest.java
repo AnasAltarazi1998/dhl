@@ -26,6 +26,7 @@ public class CreateShipmentRequest extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(request.getParameter("account_number").length() != 14)
         {
+            request.setAttribute("error_code", "account number should be 14 char");
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
 
             requestDispatcher.forward(request, response);
@@ -33,17 +34,19 @@ public class CreateShipmentRequest extends HttpServlet
             {
                 InputStream soap_response = this.soap_request_service_instance.send_soap_request(request);
                 CreateShipmentOrderModel createShipmentOrderModel = this.soap_request_service_instance.convertResponseToObject(soap_response);
-                System.out.println("the request file is : " + soap_response);
+             
                 request.setAttribute("shipmentNumber", createShipmentOrderModel.getShipment_number());
-                System.out.println(createShipmentOrderModel.getShipment_number());
+            
                 request.setAttribute("statusMessage", createShipmentOrderModel.getStatusMessage());
-                System.out.println( createShipmentOrderModel.getStatusMessage());
+            
                 request.setAttribute("labelUrl", createShipmentOrderModel.getLabelUrl());
-                System.out.println(createShipmentOrderModel.getLabelUrl());
+               
                 request.setAttribute("statusText", createShipmentOrderModel.getStatusText());
-                System.out.println(createShipmentOrderModel.getLabelUrl());
-
-                RequestDispatcher requestDispatcher = !createShipmentOrderModel.getShipment_number().equals("shipment_number") ? request.getRequestDispatcher("home1.jsp") : request.getRequestDispatcher("error.jsp");
+                
+              
+                RequestDispatcher requestDispatcher = createShipmentOrderModel.getShipment_number()
+                        .equals("shipment_number") ? request.getRequestDispatcher("error.jsp")
+                                : request.getRequestDispatcher("home1.jsp");
 
                 requestDispatcher.forward(request, response);
             }

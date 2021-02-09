@@ -1,0 +1,89 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cis="http://dhl.de/webservice/cisbase" xmlns:ns="http://dhl.de/webservices/businesscustomershipping/3.0">
+   <soapenv:Header>
+      <cis:Authentification>
+         <cis:user>2222222222_01</cis:user>
+         <cis:signature>pass</cis:signature>
+      </cis:Authentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:CreateShipmentOrderRequest>
+         <ns:Version>
+            <majorRelease>3</majorRelease>
+            <minorRelease>1</minorRelease>
+         </ns:Version>
+         <ShipmentOrder>
+            <sequenceNumber></sequenceNumber>
+            <Shipment>
+               <ShipmentDetails>
+                  <product>PRODUCT</product>
+                  <cis:accountNumber>ACCOUNT_NUMBER</cis:accountNumber>
+                  <customerReference>CUSTOMER_REFERENCE</customerReference>
+                  <shipmentDate>SHIPMENT_DATE</shipmentDate>
+                  <costCentre></costCentre>
+                  <ShipmentItem>
+                     <weightInKG>PRODUCT_WEIGHT</weightInKG>
+                     <!-- <lengthInCM>60</lengthInCM>
+                     <widthInCM>30</widthInCM>
+                     <heightInCM>15</heightInCM> -->
+                  </ShipmentItem>
+                  <Service>
+                  </Service>
+                  <Notification>
+                     <recipientEmailAddress>RECIEPENT_EMAIL_ADDRESS</recipientEmailAddress>
+                  </Notification>
+               </ShipmentDetails>
+               <Shipper>
+                  <Name>
+                     <cis:name1>SHIPER_NAME</cis:name1>
+                     <!-- <cis:name2>Absender Zeile 2</cis:name2>
+                     <cis:name3>Absender Zeile 3</cis:name3> -->
+                  </Name>
+                  <Address>
+                     <cis:streetName>SHIPER_STREET_NAME</cis:streetName>
+                     <cis:streetNumber>SHIPER_STREET_NUMBER</cis:streetNumber>
+                     <cis:zip>SHIPER_ZIP</cis:zip>
+                     <cis:city>SHIPER_CITY</cis:city>
+                     <cis:Origin>
+                        <cis:country></cis:country>
+                        <cis:countryISOCode>SHIPER_COUNTRY_CODE</cis:countryISOCode>
+                     </cis:Origin>
+                  </Address>
+                  <!-- <Communication>
+                        Optional
+                     <cis:phone>+49421987654321</cis:phone>
+                     <cis:email>absender@test.de</cis:email>
+                        Optional
+                     <cis:contactPerson>Kontaktperson Absender</cis:contactPerson>
+                  </Communication> -->
+               </Shipper>
+               <Receiver>
+                  <cis:name1>RECIEVER_NAME</cis:name1>
+                  <Address>
+                     <!-- <cis:name2>Empfänger Zeile 2</cis:name2> -->
+                     <!-- <cis:name3>Empfänger Zeile 3</cis:name3> -->
+                     <cis:streetName>RECEIVER_STREET_NAME</cis:streetName>
+                     <cis:streetNumber>RECEIVER_STREET_NUMBER</cis:streetNumber>
+                     <cis:zip>RECEIVER_ZIP</cis:zip>
+                     <cis:city>RECEIVER_CITY</cis:city>
+                     <cis:Origin>
+                        <cis:country></cis:country>
+                        <cis:countryISOCode>RECEIVER_COUNTRY_CODE</cis:countryISOCode>
+                     </cis:Origin>
+                  </Address>
+                  <!-- <Communication>
+                     <cis:phone>+49421123456789</cis:phone>
+                     <cis:email>empfaenger@test.de</cis:email>
+                     <cis:contactPerson>Kontaktperson Empfänger</cis:contactPerson>
+                  </Communication> -->
+               </Receiver>
+            </Shipment>
+            <!-- <PrintOnlyIfCodeable active="1"/> -->
+         </ShipmentOrder>
+         <!-- <labelResponseType>URL</labelResponseType>
+         <groupProfileName></groupProfileName>
+         <labelFormat></labelFormat>
+         <labelFormatRetoure></labelFormatRetoure>
+         <combinedPrinting>0</combinedPrinting> -->
+      </ns:CreateShipmentOrderRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
